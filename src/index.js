@@ -7,6 +7,9 @@ const repo = require("../config/repositories.json");
 var ps;
 
 async function main() {
+    
+    // Check if folder temp exist
+    if (!fs.existsSync('temp')) fs.mkdirSync('temp');
 
     // Check update for each repo
     console.log('Checking update for ' + repo.repo);
