@@ -55,11 +55,11 @@ async function main() {
         ps = child_process.spawn('cmd.exe', ['start', 'cmd.exe', `/K cd ${repo_path} && yarn install && yarn start`]);
 
         ps.stdout.on('data', (data) => {
-            console.log(`stdout: ${data}`);
+            console.log(data);
         });
 
         ps.stderr.on('data', (data) => {
-            console.error(`stderr: ${data}`);
+            console.error(data);
         });
 
         ps.on('close', (code) => {
